@@ -1,0 +1,8 @@
+platform :ios, '8.0'
+
+target "sTips" do
+
+pod "Masonry"
+pod "SDWebImage"
+
+end
