@@ -13,7 +13,7 @@
 //typedef enum : NSUInteger {
 //    Ds_Sheet_Default,           //looks like system sheet(title && items && cancel<index == 0>)
 //    Ds_Sheet_Normal             //title and items
-//} Ds_SheetType;
+//} Ds_SheetType; 、、、、、、、、、、、、
 
 
 @interface sSheetView : UIView<sTipsWindowProtocol>
