@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		141CE0F81F2EFB63004A6C36 /* sScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 141CE0F71F2EFB63004A6C36 /* sScreenView.m */; };
 		1437EF191F29B9BE00AEAB28 /* sAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437EF181F29B9BE00AEAB28 /* sAlertView.m */; };
-		1437EF1B1F2B3FC600AEAB28 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1437EF1A1F2B3FC600AEAB28 /* Reveal.framework */; };
 		144202271F0DC39D00CAB212 /* UIView+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 144202261F0DC39D00CAB212 /* UIView+Common.m */; };
 		145103201F24E70C00119D3E /* sTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1451031F1F24E70C00119D3E /* sTipsView.m */; };
 		1453DF171F2715BC009A3344 /* sSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1453DF161F2715BC009A3344 /* sSheetView.m */; };
@@ -60,7 +59,6 @@
 		141CE0F71F2EFB63004A6C36 /* sScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sScreenView.m; sourceTree = "<group>"; };
 		1437EF171F29B9BE00AEAB28 /* sAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sAlertView.h; sourceTree = "<group>"; };
 		1437EF181F29B9BE00AEAB28 /* sAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sAlertView.m; sourceTree = "<group>"; };
-		1437EF1A1F2B3FC600AEAB28 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		144202251F0DC39D00CAB212 /* UIView+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Common.h"; sourceTree = "<group>"; };
 		144202261F0DC39D00CAB212 /* UIView+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Common.m"; sourceTree = "<group>"; };
 		1451031E1F24E70C00119D3E /* sTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sTipsView.h; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF4F0D34CD3478504B10F3A /* libPods-sTips.a in Frameworks */,
-				1437EF1B1F2B3FC600AEAB28 /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +133,6 @@
 		14CA81AB1F03491A00C8E290 = {
 			isa = PBXGroup;
 			children = (
-				1437EF1A1F2B3FC600AEAB28 /* Reveal.framework */,
 				14CA81B61F03491A00C8E290 /* sTips */,
 				14CA81D01F03491A00C8E290 /* sTipsTests */,
 				14CA81DB1F03491A00C8E290 /* sTipsUITests */,
@@ -640,10 +636,6 @@
 					"\"Foundation\"",
 					"-framework",
 					"\"UIKit\"",
-					"-ObjC",
-					"-lz",
-					"-framework",
-					Reveal,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Seven.sTips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -672,10 +664,6 @@
 					"\"Foundation\"",
 					"-framework",
 					"\"UIKit\"",
-					"-ObjC",
-					"-lz",
-					"-framework",
-					Reveal,
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Seven.sTips;
 				PRODUCT_NAME = "$(TARGET_NAME)";
