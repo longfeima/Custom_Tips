@@ -34,6 +34,8 @@
 		14F33D6E1F30536A006D7EFD /* icon_weixinhaoyou_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14F33D621F30536A006D7EFD /* icon_weixinhaoyou_press@2x.png */; };
 		14F33D6F1F30536A006D7EFD /* icon_xinxi_nor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14F33D631F30536A006D7EFD /* icon_xinxi_nor@2x.png */; };
 		14F33D701F30536A006D7EFD /* icon_xinxi_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14F33D641F30536A006D7EFD /* icon_xinxi_press@2x.png */; };
+		14F5186A1F52C42D0089FF0F /* sDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F518671F52C42D0089FF0F /* sDateView.m */; };
+		14F5186B1F52C42D0089FF0F /* sKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F518691F52C42D0089FF0F /* sKeyboardView.m */; };
 		2BF4F0D34CD3478504B10F3A /* libPods-sTips.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F18B7FAB7449E56BAF8BDC41 /* libPods-sTips.a */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +101,10 @@
 		14F33D621F30536A006D7EFD /* icon_weixinhaoyou_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_weixinhaoyou_press@2x.png"; sourceTree = "<group>"; };
 		14F33D631F30536A006D7EFD /* icon_xinxi_nor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_xinxi_nor@2x.png"; sourceTree = "<group>"; };
 		14F33D641F30536A006D7EFD /* icon_xinxi_press@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_xinxi_press@2x.png"; sourceTree = "<group>"; };
+		14F518661F52C42D0089FF0F /* sDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sDateView.h; sourceTree = "<group>"; };
+		14F518671F52C42D0089FF0F /* sDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sDateView.m; sourceTree = "<group>"; };
+		14F518681F52C42D0089FF0F /* sKeyboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sKeyboardView.h; sourceTree = "<group>"; };
+		14F518691F52C42D0089FF0F /* sKeyboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sKeyboardView.m; sourceTree = "<group>"; };
 		79FAE452952762ADAA6B8797 /* Pods-sTips.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sTips.release.xcconfig"; path = "Pods/Target Support Files/Pods-sTips/Pods-sTips.release.xcconfig"; sourceTree = "<group>"; };
 		C4855A73CA984F74EA7F0365 /* Pods-sTips.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sTips.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sTips/Pods-sTips.debug.xcconfig"; sourceTree = "<group>"; };
 		F18B7FAB7449E56BAF8BDC41 /* libPods-sTips.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sTips.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +181,10 @@
 				1437EF181F29B9BE00AEAB28 /* sAlertView.m */,
 				141CE0F61F2EFB63004A6C36 /* sScreenView.h */,
 				141CE0F71F2EFB63004A6C36 /* sScreenView.m */,
+				14F518661F52C42D0089FF0F /* sDateView.h */,
+				14F518671F52C42D0089FF0F /* sDateView.m */,
+				14F518681F52C42D0089FF0F /* sKeyboardView.h */,
+				14F518691F52C42D0089FF0F /* sKeyboardView.m */,
 				1453DF181F271967009A3344 /* sTipsWindowProtocol.h */,
 				14CA81C01F03491A00C8E290 /* Main.storyboard */,
 				14CA81C31F03491A00C8E290 /* Assets.xcassets */,
@@ -462,12 +472,14 @@
 			files = (
 				145103201F24E70C00119D3E /* sTipsView.m in Sources */,
 				14CA81BF1F03491A00C8E290 /* ViewController.m in Sources */,
+				14F5186A1F52C42D0089FF0F /* sDateView.m in Sources */,
 				1454C47D1F21A0FE00031250 /* sShowTisWindow.m in Sources */,
 				1437EF191F29B9BE00AEAB28 /* sAlertView.m in Sources */,
 				141CE0F81F2EFB63004A6C36 /* sScreenView.m in Sources */,
 				14CA81BC1F03491A00C8E290 /* AppDelegate.m in Sources */,
 				14CA81B91F03491A00C8E290 /* main.m in Sources */,
 				144202271F0DC39D00CAB212 /* UIView+Common.m in Sources */,
+				14F5186B1F52C42D0089FF0F /* sKeyboardView.m in Sources */,
 				1453DF171F2715BC009A3344 /* sSheetView.m in Sources */,
 				14ED03431F25C5C000DD5DF8 /* sShareView.m in Sources */,
 			);

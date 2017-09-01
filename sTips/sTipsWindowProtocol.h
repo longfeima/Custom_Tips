@@ -47,6 +47,14 @@ typedef enum : NSUInteger{
     
 } Ds_ScreenButtonClick;
 
+
+typedef enum : NSUInteger{
+
+    Ds_Date_Normal
+    
+} Ds_DateType;
+
+
 @optional
 //tips delegate()
 - (void)sTipsViewClick;
@@ -70,5 +78,13 @@ typedef enum : NSUInteger{
 /**screenBtnClick  imageV click(Ds_Screen_Image)  cancelBtnClick (Ds_Screen_Cancel)*/
 
 - (void)sScreenViewClick:(Ds_ScreenButtonClick)type;
+
+
+
+- (void)sDateViewClick:(NSInteger)index;
+
+
+- (void)sKeyboardViewClick:(NSInteger)index contentStr:(NSString *)content;
+
 
 @end

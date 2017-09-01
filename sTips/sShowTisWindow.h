@@ -60,6 +60,6 @@
 
 - (void)showScreenWithUrl:(NSURL *)imageUrl Delegate:(id)delegate;
 
-
+- (void)showKeyboardViewWithDelegate:(id)delegate;
 
 @end

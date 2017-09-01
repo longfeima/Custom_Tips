@@ -16,7 +16,7 @@
 #import "sSheetView.h"
 #import "sAlertView.h"
 #import "sScreenView.h"
-
+#import "sKeyboardView.h"
 
 
 
@@ -33,6 +33,7 @@
 @property (nonatomic, strong) sSheetView *sheetView;
 @property (nonatomic, strong) sAlertView *alertView;
 @property (nonatomic, strong) sScreenView *screenView;
+@property (nonatomic, strong) sKeyboardView *keyboardView;
 
 @end
 
@@ -136,6 +137,9 @@
     }
     if (_tipsV) {
         [self hideTipsView];
+    }
+    if (_keyboardView) {
+        [self hideKeyboardView];
     }
     
 }
@@ -396,6 +400,40 @@
 }
 
 
+- (void)showKeyboardViewWithDelegate:(id)delegate{
+
+    [self.tipsWindow.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj removeFromSuperview];
+    }];
+    
+    [self showBarWindow];
+    [self.tipsWindow addSubview:self.keyboardView];
+    
+    self.tipsWindow.alpha = 1;
+    self.tipsWindow.backgroundColor = [UIColor clearColor];
+    [self.keyboardView.textView becomeFirstResponder];
+//    [UIView animateWithDuration:0.25 animations:^{
+//    
+//        self.keyboardView.frame = CGRectMake(0, self.tipsWindow.frame.size.height - 320, self.tipsWindow.frame.size.width, 40);
+//        self.keyboardView.backgroundColor = [UIColor orangeColor];
+//    }];
+    
+    
+}
+
+- (void)hideKeyboardView{
+    [self.keyboardView.textView resignFirstResponder];
+    [self performSelector:@selector(hello) withObject:nil afterDelay:1];
+}
+- (void)hello{
+    [self.tipsWindow.layer removeAllAnimations];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showKeyboardViewWithDelegate:) object:nil];
+    self.tipsWindow.alpha = 0;
+    [self.keyboardView removeFromSuperview];
+    self.keyboardView = nil;
+    [self removalBarWindow];
+
+}
 
 //custom
 - (void)showBarWindow{
@@ -455,6 +493,15 @@
     }
     return _screenView;
 }
+
+- (sKeyboardView *)keyboardView{
+
+    if (!_keyboardView) {
+        _keyboardView = [[sKeyboardView alloc]initWithFrame:CGRectMake(0, self.tipsWindow.frame.size.height, self.tipsWindow.frame.size.width, 250)];
+    }
+    return _keyboardView;
+}
+
 
 
 /////lazy

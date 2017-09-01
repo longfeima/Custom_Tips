@@ -10,4 +10,6 @@
 
 @interface sKeyboardView : UIView
 
+@property (nonatomic, strong) UITextView *textView;
+
 @end

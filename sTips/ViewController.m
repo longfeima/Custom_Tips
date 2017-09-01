@@ -28,7 +28,8 @@
                         @"分享View",
                         @"sheetView",
                         @"AlertView",
-                        @"ScreenView"
+                        @"ScreenView",
+                        @"showKeyboard"
                         ];
     }
     return _dataSource;
@@ -105,6 +106,14 @@
             [[sShowTisWindow shareTipsWindow] showScreenWithUrl:[NSURL URLWithString:@"http://ddsc2.b0.upaiyun.com/common/launch/%E5%BB%BA%E5%86%9B%E8%8A%82.jpg"] Delegate:self];
 //            [sShowTisWindow shareTipsWindow].isClickHide = YES;
         }
+            
+            break;
+        case 5:
+        {
+            [[sShowTisWindow shareTipsWindow] showKeyboardViewWithDelegate:self];
+                        [sShowTisWindow shareTipsWindow].isClickHide = YES;
+        }
+            
             break;
             
         default:
