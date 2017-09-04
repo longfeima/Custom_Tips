@@ -168,6 +168,19 @@
     [[sShowTisWindow shareTipsWindow] hideWindowSubviews];
 }
 
+
+//keyboard
+
+- (void)sKeyboardViewClick:(NSInteger)index contentStr:(NSString *)content{
+    
+    [[sShowTisWindow shareTipsWindow] hideWindowSubviews];
+    if (index == 1) {
+        NSLog(@"%@",content);
+    }
+    
+}
+
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
 //    [sShowTisWindow shareTipsWindow].type = 3;

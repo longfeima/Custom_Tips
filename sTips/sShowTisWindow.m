@@ -50,7 +50,7 @@
 
 ////////////////////////////////////////////////////////////
 + (instancetype)shareTipsWindow{
-
+    
     static sShowTisWindow *_shareTipsWindow = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -60,7 +60,7 @@
 }
 
 - (instancetype)init{
-
+    
     if (self = [super init]) {
         
         if ([self.dataSource respondsToSelector:@selector(showTipsWithCustomView:)]) {
@@ -80,7 +80,7 @@
 //}
 
 - (void)setType:(DsTipsWindowType)type{
-
+    
     switch (type) {
         case tipsWindowAllScreen:
         {
@@ -122,7 +122,7 @@
 
 
 - (void)hideWindowSubviews{
-
+    
     if (_sheetView) {
         [self hideSheetView];
     }
@@ -172,12 +172,12 @@
             [self.tipsV removeFromSuperview];
             [self removalBarWindow];
         }];
-
+        
     }];
 }
 
 - (void)showTipsWithString:(NSString *)tips Delegate:(id)delegate{
-
+    
     [self.tipsWindow.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
     }];
@@ -214,19 +214,19 @@
     self.type = tipsWindowExpectNavBar;
     [self showBarWindow];
     [self.tipsWindow addSubview:self.shareView];
-   
+    
     self.shareView.delegate = delegate;
     [UIView animateWithDuration:0.25 animations:^{
         self.tipsWindow.alpha = 1;
         self.shareView.frame = CGRectMake(0, self.tipsWindow.frame.size.height - 250, self.tipsWindow.frame.size.width, 250);
     } completion:^(BOOL finished) {
-//        [self performSelector:@selector(hideShareView) withObject:nil afterDelay:3];
+        //        [self performSelector:@selector(hideShareView) withObject:nil afterDelay:3];
     }];
     
     
 }
 - (void)showShareViewWithNormalLogs:(NSArray <NSString *>*)norLogs PressLogs:(NSArray <NSString *>*)preLogs Titles:(NSArray <NSString *>*)titles Delegate:(id)delegate{
-
+    
     [self.tipsWindow.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
     }];
@@ -278,12 +278,12 @@
         self.tipsWindow.alpha = 1;
         self.sheetView.frame = CGRectMake(0, self.tipsWindow.frame.size.height - 250, self.tipsWindow.frame.size.width, 250);
     } completion:^(BOOL finished) {
-       
+        
     }];
 }
 
 - (void)hideSheetView{
-
+    
     [self.tipsWindow.layer removeAllAnimations];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showSheetWithObject:Title:Delegate:Type:) object:nil];
     [UIView animateWithDuration:0.25 animations:^{
@@ -294,7 +294,7 @@
         self.sheetView = nil;
         [self removalBarWindow];
     }];
-
+    
     
 }
 
@@ -322,7 +322,6 @@
     
 }
 - (void)showAlertWithTitle:(NSString *)title Message:(NSString *)message Cancel:(NSString *)cancel Confirm:(NSString *)confirm Delegate:(id)delegate{
-    sleep(3);
     [self.tipsWindow.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
     }];
@@ -331,7 +330,7 @@
     [self.tipsWindow addSubview:self.alertView];
     [self.alertView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.centerY.equalTo(self.tipsWindow);
-//        make.width.height.equalTo(@200);
+        //        make.width.height.equalTo(@200);
         make.left.right.equalTo(self.tipsWindow);
     }];
     [self.alertView showAlertWithTitle:title Message:message Cancel:cancel Confirm:confirm];
@@ -380,50 +379,35 @@
     [UIView animateWithDuration:0.25 animations:^{
         self.tipsWindow.alpha = 1;
     }];
-
-}
-- (void)hideScreenView{
-
-    [self.tipsWindow.layer removeAllAnimations];
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showScreenWithUrl:) object:nil];
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showScreenWithLocaliteUrl:) object:nil];
-    [UIView animateWithDuration:0.25 animations:^{
-        self.tipsWindow.alpha = 0.0;
-//        self.screenView.center = self.tipsWindow.center;
-//        self.screenView.bounds = CGRectMake(0, 0, 0, 0);
-    } completion:^(BOOL finished) {
-        [self.screenView removeFromSuperview];
-        self.screenView = nil;
-        [self removalBarWindow];
-    }];
-
+    
+    
 }
 
 
 - (void)showKeyboardViewWithDelegate:(id)delegate{
-
+    
     [self.tipsWindow.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [obj removeFromSuperview];
     }];
     
     [self showBarWindow];
     [self.tipsWindow addSubview:self.keyboardView];
-    
+    self.keyboardView.delegate = delegate;
     self.tipsWindow.alpha = 1;
     self.tipsWindow.backgroundColor = [UIColor clearColor];
     [self.keyboardView.textView becomeFirstResponder];
-//    [UIView animateWithDuration:0.25 animations:^{
-//    
-//        self.keyboardView.frame = CGRectMake(0, self.tipsWindow.frame.size.height - 320, self.tipsWindow.frame.size.width, 40);
-//        self.keyboardView.backgroundColor = [UIColor orangeColor];
-//    }];
+    //    [UIView animateWithDuration:0.25 animations:^{
+    //
+    //        self.keyboardView.frame = CGRectMake(0, self.tipsWindow.frame.size.height - 320, self.tipsWindow.frame.size.width, 40);
+    //        self.keyboardView.backgroundColor = [UIColor orangeColor];
+    //    }];
     
     
 }
 
 - (void)hideKeyboardView{
     [self.keyboardView.textView resignFirstResponder];
-    [self performSelector:@selector(hello) withObject:nil afterDelay:1];
+    [self performSelector:@selector(hello) withObject:nil afterDelay:0.5];
 }
 - (void)hello{
     [self.tipsWindow.layer removeAllAnimations];
@@ -432,8 +416,35 @@
     [self.keyboardView removeFromSuperview];
     self.keyboardView = nil;
     [self removalBarWindow];
-
+    
 }
+
+- (sKeyboardView *)keyboardView{
+    
+    if (!_keyboardView) {
+        _keyboardView = [[sKeyboardView alloc]initWithFrame:CGRectMake(0, self.tipsWindow.frame.size.height, self.tipsWindow.frame.size.width, 120)];
+    }
+    return _keyboardView;
+}
+
+- (void)hideScreenView{
+    
+    [self.tipsWindow.layer removeAllAnimations];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showScreenWithUrl:) object:nil];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(showScreenWithLocaliteUrl:) object:nil];
+    [UIView animateWithDuration:0.25 animations:^{
+        self.tipsWindow.alpha = 0.0;
+        //        self.screenView.center = self.tipsWindow.center;
+        //        self.screenView.bounds = CGRectMake(0, 0, 0, 0);
+    } completion:^(BOOL finished) {
+        [self.screenView removeFromSuperview];
+        self.screenView = nil;
+        [self removalBarWindow];
+    }];
+    
+}
+
+
 
 //custom
 - (void)showBarWindow{
@@ -450,7 +461,7 @@
 
 
 - (sTipsView *)tipsV{
-
+    
     if (!_tipsV) {
         _tipsV = [[sTipsView alloc] initWithFrame:CGRectMake(0, -64, self.tipsWindow.frame.size.width, 64)];
         _tipsV.backgroundColor = [UIColor purpleColor];
@@ -467,7 +478,7 @@
 //}
 
 - (sSheetView *)sheetView{
-
+    
     if (!_sheetView) {
         _sheetView = [[sSheetView alloc]initWithFrame:CGRectMake(0, self.tipsWindow.frame.size.height, self.tipsWindow.frame.size.width, 250)];
     }
@@ -475,17 +486,17 @@
 }
 
 - (sAlertView *)alertView{
-
+    
     if (!_alertView) {
         _alertView = [sAlertView new];
         
-       
+        
     }
     return _alertView;
 }
 
 - (sScreenView *)screenView{
-
+    
     if (!_screenView) {
         _screenView = [[sScreenView alloc]initWithFrame:CGRectMake(0, 0, 220 * DS_SCREEN_SCALE, 220 * DS_SCREEN_SCALE * 1.2)];
         [self.tipsWindow addSubview:_screenView];
@@ -493,15 +504,6 @@
     }
     return _screenView;
 }
-
-- (sKeyboardView *)keyboardView{
-
-    if (!_keyboardView) {
-        _keyboardView = [[sKeyboardView alloc]initWithFrame:CGRectMake(0, self.tipsWindow.frame.size.height, self.tipsWindow.frame.size.width, 250)];
-    }
-    return _keyboardView;
-}
-
 
 
 /////lazy
@@ -512,12 +514,12 @@
         _keyWindow = [UIApplication sharedApplication].keyWindow;
     }
     
-//    return _keyWindow;
+    //    return _keyWindow;
     return [(AppDelegate *)[UIApplication sharedApplication].delegate window];//
 }
 
 - (UIWindow *)tipsWindow{
-
+    
     if (!_tipsWindow) {
         _tipsWindow = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
         _tipsWindow.clipsToBounds = YES;

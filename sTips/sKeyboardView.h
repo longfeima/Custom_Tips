@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "sTipsWindowProtocol.h"
 @interface sKeyboardView : UIView
 
 @property (nonatomic, strong) UITextView *textView;
-
+@property (nonatomic, assign) id<sTipsWindowProtocol>delegate;
 @end

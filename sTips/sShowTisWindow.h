@@ -38,7 +38,7 @@
 - (void)showShareViewWithNormalLogs:(NSArray <NSString *>*)norLogs PressLogs:(NSArray <NSString *>*)preLogs Titles:(NSArray <NSString *>*)titles Delegate:(id)delegate;
 /**
  sheetView
-
+ 
  @param items item
  @param title title
  */
